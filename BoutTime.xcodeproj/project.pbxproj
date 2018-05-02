@@ -12,6 +12,8 @@
 		A914CECA209959A700EF8B29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A914CEC8209959A700EF8B29 /* Main.storyboard */; };
 		A914CECC209959A700EF8B29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A914CECB209959A700EF8B29 /* Assets.xcassets */; };
 		A914CECF209959A700EF8B29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A914CECD209959A700EF8B29 /* LaunchScreen.storyboard */; };
+		A914CEDB20995BDA00EF8B29 /* IncorrectBuzz.wav in Resources */ = {isa = PBXBuildFile; fileRef = A914CED920995BDA00EF8B29 /* IncorrectBuzz.wav */; };
+		A914CEDC20995BDA00EF8B29 /* CorrectDing.wav in Resources */ = {isa = PBXBuildFile; fileRef = A914CEDA20995BDA00EF8B29 /* CorrectDing.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		A914CECB209959A700EF8B29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A914CECE209959A700EF8B29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A914CED0209959A700EF8B29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A914CED920995BDA00EF8B29 /* IncorrectBuzz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IncorrectBuzz.wav; sourceTree = "<group>"; };
+		A914CEDA20995BDA00EF8B29 /* CorrectDing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CorrectDing.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 		A914CEC3209959A700EF8B29 /* BoutTime */ = {
 			isa = PBXGroup;
 			children = (
+				A914CED820995B7A00EF8B29 /* Sounds */,
+				A914CED620995B5800EF8B29 /* Models */,
 				A914CEC4209959A700EF8B29 /* AppDelegate.swift */,
 				A914CEC6209959A700EF8B29 /* ViewController.swift */,
 				A914CEC8209959A700EF8B29 /* Main.storyboard */,
@@ -62,6 +68,22 @@
 				A914CED0209959A700EF8B29 /* Info.plist */,
 			);
 			path = BoutTime;
+			sourceTree = "<group>";
+		};
+		A914CED620995B5800EF8B29 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A914CED820995B7A00EF8B29 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				A914CEDA20995BDA00EF8B29 /* CorrectDing.wav */,
+				A914CED920995BDA00EF8B29 /* IncorrectBuzz.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,7 +145,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A914CEDC20995BDA00EF8B29 /* CorrectDing.wav in Resources */,
 				A914CECF209959A700EF8B29 /* LaunchScreen.storyboard in Resources */,
+				A914CEDB20995BDA00EF8B29 /* IncorrectBuzz.wav in Resources */,
 				A914CECC209959A700EF8B29 /* Assets.xcassets in Resources */,
 				A914CECA209959A700EF8B29 /* Main.storyboard in Resources */,
 			);
