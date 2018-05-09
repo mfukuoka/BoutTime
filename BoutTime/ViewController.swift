@@ -21,6 +21,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //get shake gesture
+        self.becomeFirstResponder()
+        
         //let the games begin!
         startRound()
 
@@ -30,7 +33,18 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    //become first responder for shake motion
+    override var canBecomeFirstResponder: Bool {
+        get {
+            return true
+        }
+    }
     
+    //shake motion
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        print("AC/DC: You shook me all night long.")
+    }
     //set up the display so the round can start
     func startRound(){
         
