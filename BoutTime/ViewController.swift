@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         super.view.addConstraint(NSLayoutConstraint(item: timerLabel, attribute: .top, relatedBy: .equal, toItem: nextRoundButton, attribute: .top, multiplier: 1, constant: 0))
         
         //setup countdown timer
-        timeLimit = 60
+        timeLimit = 10
         updateLabelTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimerText), userInfo: nil, repeats: true)
     }
     
@@ -63,7 +63,13 @@ class ViewController: UIViewController {
     @objc func updateTimerText(){
         timeLimit -= 1
         timerLabel.text = "0:\(timeLimit)"
+        if timeLimit == 0 {
+            timerLabel.isHidden = true
+            nextRoundButton.isHidden = false
+            notificationLabel.text = "Tap events to learn more"
+        }
     }
+
 
     enum Direction: Int {
         case Down = 0
@@ -71,7 +77,7 @@ class ViewController: UIViewController {
     }
     
     //event for when an answer is moved up or down
-    @IBAction func orderAnswer(_ sender: Any) {
+    @IBAction func orderEvent(_ sender: Any) {
         
         if let sender = sender as? UIButton {
             

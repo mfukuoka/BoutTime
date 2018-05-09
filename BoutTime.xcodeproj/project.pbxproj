@@ -14,6 +14,7 @@
 		A914CECF209959A700EF8B29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A914CECD209959A700EF8B29 /* LaunchScreen.storyboard */; };
 		A914CEDB20995BDA00EF8B29 /* IncorrectBuzz.wav in Resources */ = {isa = PBXBuildFile; fileRef = A914CED920995BDA00EF8B29 /* IncorrectBuzz.wav */; };
 		A914CEDC20995BDA00EF8B29 /* CorrectDing.wav in Resources */ = {isa = PBXBuildFile; fileRef = A914CEDA20995BDA00EF8B29 /* CorrectDing.wav */; };
+		A933360B20A2AACE00088107 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A933360A20A2AACE00088107 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A914CED0209959A700EF8B29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A914CED920995BDA00EF8B29 /* IncorrectBuzz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IncorrectBuzz.wav; sourceTree = "<group>"; };
 		A914CEDA20995BDA00EF8B29 /* CorrectDing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CorrectDing.wav; sourceTree = "<group>"; };
+		A933360A20A2AACE00088107 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				A914CECB209959A700EF8B29 /* Assets.xcassets */,
 				A914CECD209959A700EF8B29 /* LaunchScreen.storyboard */,
 				A914CED0209959A700EF8B29 /* Info.plist */,
+				A933360A20A2AACE00088107 /* Game.swift */,
 			);
 			path = BoutTime;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A914CEC7209959A700EF8B29 /* ViewController.swift in Sources */,
+				A933360B20A2AACE00088107 /* Game.swift in Sources */,
 				A914CEC5209959A700EF8B29 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -72,7 +72,7 @@
                                         <state key="normal" backgroundImage="down_full"/>
                                         <state key="highlighted" backgroundImage="down_full_selected"/>
                                         <connections>
-                                            <action selector="orderAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X32-z6-d8w"/>
+                                            <action selector="orderEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gsk-GK-gY5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0w1-It-P01">
@@ -84,7 +84,7 @@
                                         <state key="selected" backgroundImage="up_full_selected"/>
                                         <state key="highlighted" backgroundImage="up_full_selected"/>
                                         <connections>
-                                            <action selector="orderAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FKV-gb-aOf"/>
+                                            <action selector="orderEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bgN-w8-piU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBg-c7-WWj">
@@ -95,7 +95,7 @@
                                         <state key="normal" backgroundImage="up_half"/>
                                         <state key="highlighted" backgroundImage="up_half_selected"/>
                                         <connections>
-                                            <action selector="orderAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dnE-D4-eDj"/>
+                                            <action selector="orderEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nPN-2A-pyT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btE-bQ-NTI">
@@ -107,7 +107,7 @@
                                         <state key="selected" backgroundImage="down_half_selected"/>
                                         <state key="highlighted" backgroundImage="down_half_selected"/>
                                         <connections>
-                                            <action selector="orderAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YmL-Kd-DIr"/>
+                                            <action selector="orderEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3dq-no-WaD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqp-nT-Lqb">
@@ -119,7 +119,7 @@
                                         <state key="selected" backgroundImage="up_half_selected"/>
                                         <state key="highlighted" backgroundImage="up_half_selected"/>
                                         <connections>
-                                            <action selector="orderAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9zI-pC-HLM"/>
+                                            <action selector="orderEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e2v-fd-qi2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPP-Fw-f1f">
@@ -131,7 +131,7 @@
                                         <state key="selected" backgroundImage="down_half_selected"/>
                                         <state key="highlighted" backgroundImage="down_half_selected"/>
                                         <connections>
-                                            <action selector="orderAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UR1-gV-Mlt"/>
+                                            <action selector="orderEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="49s-8f-RGf"/>
                                         </connections>
                                     </button>
                                 </subviews>
