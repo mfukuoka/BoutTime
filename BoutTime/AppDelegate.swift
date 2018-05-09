@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  BoutTime
 //
-//  Created by thechemist on 5/1/18.
+//  Created by mfukuoka on 5/1/18.
 //  Copyright © 2018 mfukuoka. All rights reserved.
 //
 

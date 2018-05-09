@@ -44,7 +44,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start of the Korean War" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfK-Fy-YxU">
-                                        <rect key="frame" x="0.0" y="158" width="254.5" height="71"/>
+                                        <rect key="frame" x="0.0" y="158" width="254" height="71"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="NfK-Fy-YxU" secondAttribute="height" multiplier="25:7" id="1X1-lj-eAI"/>
@@ -70,7 +70,7 @@
                                             <constraint firstAttribute="width" secondItem="OfR-FB-GxU" secondAttribute="height" multiplier="19:40" id="95L-wf-7My"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="down_full"/>
-                                        <state key="selected" backgroundImage="down_full_selected"/>
+                                        <state key="highlighted" backgroundImage="down_full_selected"/>
                                         <connections>
                                             <action selector="orderAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X32-z6-d8w"/>
                                         </connections>
@@ -82,6 +82,7 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="up_full"/>
                                         <state key="selected" backgroundImage="up_full_selected"/>
+                                        <state key="highlighted" backgroundImage="up_full_selected"/>
                                         <connections>
                                             <action selector="orderAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FKV-gb-aOf"/>
                                         </connections>
@@ -92,7 +93,7 @@
                                             <constraint firstAttribute="width" secondItem="XBg-c7-WWj" secondAttribute="height" multiplier="19:20" id="GYH-0f-x73"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="up_half"/>
-                                        <state key="selected" backgroundImage="up_half_selected"/>
+                                        <state key="highlighted" backgroundImage="up_half_selected"/>
                                         <connections>
                                             <action selector="orderAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dnE-D4-eDj"/>
                                         </connections>
@@ -104,28 +105,31 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="down_half"/>
                                         <state key="selected" backgroundImage="down_half_selected"/>
+                                        <state key="highlighted" backgroundImage="down_half_selected"/>
                                         <connections>
                                             <action selector="orderAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YmL-Kd-DIr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqp-nT-Lqb">
-                                        <rect key="frame" x="254.5" y="158" width="33.5" height="35.5"/>
+                                        <rect key="frame" x="254" y="158" width="34" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Yqp-nT-Lqb" secondAttribute="height" multiplier="19:20" id="2Vd-Xj-hH2"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="up_half"/>
                                         <state key="selected" backgroundImage="up_half_selected"/>
+                                        <state key="highlighted" backgroundImage="up_half_selected"/>
                                         <connections>
                                             <action selector="orderAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9zI-pC-HLM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPP-Fw-f1f">
-                                        <rect key="frame" x="254.5" y="193.5" width="33.5" height="35.5"/>
+                                        <rect key="frame" x="254" y="194" width="34" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="mPP-Fw-f1f" secondAttribute="height" multiplier="19:20" id="1bh-Xa-faH"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="down_half"/>
                                         <state key="selected" backgroundImage="down_half_selected"/>
+                                        <state key="highlighted" backgroundImage="down_half_selected"/>
                                         <connections>
                                             <action selector="orderAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UR1-gV-Mlt"/>
                                         </connections>
@@ -169,16 +173,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WWh-z9-2fv">
                                 <rect key="frame" x="16" y="341" width="288" height="71"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap events to learn more" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfJ-kh-ZMF">
-                                        <rect key="frame" x="54.5" y="42" width="179" height="19"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap events to learn more" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="bfJ-kh-ZMF">
+                                        <rect key="frame" x="54.5" y="48" width="179" height="19"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vv2-dV-BMS">
-                                        <rect key="frame" x="44.5" y="0.0" width="200" height="34"/>
+                                        <rect key="frame" x="44.5" y="0.0" width="200" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="6q2-fa-3cI"/>
+                                            <constraint firstAttribute="height" constant="40" id="6q2-fa-3cI"/>
                                             <constraint firstAttribute="width" constant="200" id="l9I-Qo-jez"/>
                                         </constraints>
                                         <state key="normal" image="next_round_success">
@@ -207,6 +211,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="nextRoundButton" destination="vv2-dV-BMS" id="kPu-yZ-27T"/>
+                        <outlet property="notificationLabel" destination="bfJ-kh-ZMF" id="Gkn-JM-yOr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
