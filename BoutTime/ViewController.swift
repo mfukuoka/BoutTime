@@ -14,9 +14,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextRoundButton: UIButton!
     @IBOutlet weak var notificationLabel: UILabel!
     
+    @IBOutlet weak var eventLabelOne: UILabel!
+    @IBOutlet weak var eventLabelTwo: UILabel!
+    @IBOutlet weak var eventLabelThree: UILabel!
+    @IBOutlet weak var eventLabelFour: UILabel!
+    
     var updateLabelTimer: Timer!
     var timeLimit = 60
     var timerLabel: UILabel!
+    let game = Game()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +30,13 @@ class ViewController: UIViewController {
         //get shake gesture
         self.becomeFirstResponder()
         
-        //let the games begin!
-        startRound()
-
+       //set screen for start of the round
+        defaultRoundScreen()
+        
+       //let the games begin!
+        game.newRound()
+        refreshEventsOnScreen()
+     
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,8 +55,17 @@ class ViewController: UIViewController {
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         print("AC/DC: You shook me all night long.")
     }
+    
+    //updates the events text labels
+    func refreshEventsOnScreen(){
+        eventLabelOne.text = game.round.events[0].description
+        eventLabelTwo.text = game.round.events[1].description
+        eventLabelThree.text = game.round.events[2].description
+        eventLabelFour.text = game.round.events[3].description
+    }
+    
     //set up the display so the round can start
-    func startRound(){
+    func defaultRoundScreen(){
         
         //hide the next round button and update notification label
         nextRoundButton.isHidden = true
@@ -69,8 +88,9 @@ class ViewController: UIViewController {
         super.view.addConstraint(NSLayoutConstraint(item: timerLabel, attribute: .top, relatedBy: .equal, toItem: nextRoundButton, attribute: .top, multiplier: 1, constant: 0))
         
         //setup countdown timer
-        timeLimit = 10
+        timeLimit = 60
         updateLabelTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimerText), userInfo: nil, repeats: true)
+        
     }
     
     //responsible for decreasing the time and updating the label
@@ -85,9 +105,13 @@ class ViewController: UIViewController {
     }
 
 
-    enum Direction: Int {
-        case Down = 0
-        case Up = 1
+    enum Button: Int {
+        case One = 0
+        case Two
+        case Three
+        case Four
+        case Five
+        case Six
     }
     
     //event for when an answer is moved up or down
@@ -95,15 +119,26 @@ class ViewController: UIViewController {
         
         if let sender = sender as? UIButton {
             
-            if sender.tag == Direction.Up.rawValue {
-                print("Up")
-            }
-            else if sender.tag == Direction.Down.rawValue {
-                print("Down")
-            }
-            else{
+            let event1 = game.round.events[0]
+            let event2 = game.round.events[1]
+            let event3 = game.round.events[2]
+            let event4 = game.round.events[3]
+            
+            switch sender.tag {
+            case Button.One.rawValue, Button.Two.rawValue:
+                game.round.events[1] = event1
+                game.round.events[0] = event2
+            case Button.Three.rawValue, Button.Four.rawValue:
+                game.round.events[1] = event3
+                game.round.events[2] = event2
+            case Button.Five.rawValue, Button.Six.rawValue:
+                game.round.events[2] = event4
+                game.round.events[3] = event3
+            default:
                 fatalError()
             }
+            
+          refreshEventsOnScreen()
         }
         
     }

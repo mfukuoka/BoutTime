@@ -65,7 +65,6 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfR-FB-GxU">
                                         <rect key="frame" x="254" y="0.0" width="34" height="71"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="1"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="OfR-FB-GxU" secondAttribute="height" multiplier="19:40" id="95L-wf-7My"/>
                                         </constraints>
@@ -75,7 +74,7 @@
                                             <action selector="orderEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gsk-GK-gY5"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0w1-It-P01">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0w1-It-P01">
                                         <rect key="frame" x="254" y="237" width="34" height="71"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="0w1-It-P01" secondAttribute="height" multiplier="19:40" id="uP0-Vg-sW6"/>
@@ -98,7 +97,7 @@
                                             <action selector="orderEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nPN-2A-pyT"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btE-bQ-NTI">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btE-bQ-NTI">
                                         <rect key="frame" x="254" y="114" width="34" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="btE-bQ-NTI" secondAttribute="height" multiplier="19:20" id="oQR-fn-pAt"/>
@@ -110,7 +109,7 @@
                                             <action selector="orderEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3dq-no-WaD"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqp-nT-Lqb">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqp-nT-Lqb">
                                         <rect key="frame" x="254" y="158" width="34" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Yqp-nT-Lqb" secondAttribute="height" multiplier="19:20" id="2Vd-Xj-hH2"/>
@@ -122,7 +121,7 @@
                                             <action selector="orderEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e2v-fd-qi2"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPP-Fw-f1f">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPP-Fw-f1f">
                                         <rect key="frame" x="254" y="194" width="34" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="mPP-Fw-f1f" secondAttribute="height" multiplier="19:20" id="1bh-Xa-faH"/>
@@ -212,6 +211,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="eventLabelFour" destination="dX0-fK-xF8" id="T5v-t7-Dva"/>
+                        <outlet property="eventLabelOne" destination="Re0-b0-xCB" id="1vt-Uk-ZGY"/>
+                        <outlet property="eventLabelThree" destination="NfK-Fy-YxU" id="N50-XP-i3L"/>
+                        <outlet property="eventLabelTwo" destination="kmS-55-D4m" id="WxB-lA-Q5E"/>
                         <outlet property="nextRoundButton" destination="vv2-dV-BMS" id="kPu-yZ-27T"/>
                         <outlet property="notificationLabel" destination="bfJ-kh-ZMF" id="Gkn-JM-yOr"/>
                     </connections>
