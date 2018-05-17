@@ -30,12 +30,14 @@ class ViewController: UIViewController {
         //get shake gesture
         self.becomeFirstResponder()
         
+        //let the games begin!
+        game.newRound()
+        
        //set screen for start of the round
         defaultRoundScreen()
         
-       //let the games begin!
-        game.newRound()
-        refreshEventsOnScreen()
+       
+
      
     }
     
@@ -58,10 +60,13 @@ class ViewController: UIViewController {
     
     //updates the events text labels
     func refreshEventsOnScreen(){
-        eventLabelOne.text = game.round.events[0].description
-        eventLabelTwo.text = game.round.events[1].description
-        eventLabelThree.text = game.round.events[2].description
-        eventLabelFour.text = game.round.events[3].description
+        if let round = game.round {
+            eventLabelOne.text = round.events[0].description
+            eventLabelTwo.text = round.events[1].description
+            eventLabelThree.text = round.events[2].description
+            eventLabelFour.text = round.events[3].description
+        }
+        
     }
     
     //set up the display so the round can start
@@ -88,9 +93,9 @@ class ViewController: UIViewController {
         super.view.addConstraint(NSLayoutConstraint(item: timerLabel, attribute: .top, relatedBy: .equal, toItem: nextRoundButton, attribute: .top, multiplier: 1, constant: 0))
         
         //setup countdown timer
-        timeLimit = 60
+        timeLimit = 10
         updateLabelTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimerText), userInfo: nil, repeats: true)
-        
+        refreshEventsOnScreen()
     }
     
     //responsible for decreasing the time and updating the label
@@ -101,6 +106,7 @@ class ViewController: UIViewController {
             timerLabel.isHidden = true
             nextRoundButton.isHidden = false
             notificationLabel.text = "Tap events to learn more"
+            updateLabelTimer.invalidate()
         }
     }
 
@@ -118,30 +124,36 @@ class ViewController: UIViewController {
     @IBAction func orderEvent(_ sender: Any) {
         
         if let sender = sender as? UIButton {
-            
-            let event1 = game.round.events[0]
-            let event2 = game.round.events[1]
-            let event3 = game.round.events[2]
-            let event4 = game.round.events[3]
-            
-            switch sender.tag {
-            case Button.One.rawValue, Button.Two.rawValue:
-                game.round.events[1] = event1
-                game.round.events[0] = event2
-            case Button.Three.rawValue, Button.Four.rawValue:
-                game.round.events[1] = event3
-                game.round.events[2] = event2
-            case Button.Five.rawValue, Button.Six.rawValue:
-                game.round.events[2] = event4
-                game.round.events[3] = event3
-            default:
-                fatalError()
+            if let round = game.round {
+                let event1 = round.events[0]
+                let event2 = round.events[1]
+                let event3 = round.events[2]
+                let event4 = round.events[3]
+                
+                switch sender.tag {
+                case Button.One.rawValue, Button.Two.rawValue:
+                    round.events[1] = event1
+                    round.events[0] = event2
+                case Button.Three.rawValue, Button.Four.rawValue:
+                    round.events[1] = event3
+                    round.events[2] = event2
+                case Button.Five.rawValue, Button.Six.rawValue:
+                    round.events[2] = event4
+                    round.events[3] = event3
+                default:
+                    fatalError()
+                }
+                
+              refreshEventsOnScreen()
             }
-            
-          refreshEventsOnScreen()
         }
         
     }
+    @IBAction func nextRound() {
+        game.newRound()
+        defaultRoundScreen()
+    }
+    
     
     //MARK: Helper Methods
     func timeLimit(seconds: Int) {
