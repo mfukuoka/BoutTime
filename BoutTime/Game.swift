@@ -12,6 +12,7 @@ import GameKit
 class Game {
     var round: Round?
     var events: [Event]
+    var timeLimit = 60
     
     init() {
         self.events = getEventsFromDb()

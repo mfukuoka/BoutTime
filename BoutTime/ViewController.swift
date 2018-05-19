@@ -14,13 +14,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextRoundButton: UIButton!
     @IBOutlet weak var notificationLabel: UILabel!
     
-    @IBOutlet weak var eventLabelOne: UILabel!
-    @IBOutlet weak var eventLabelTwo: UILabel!
-    @IBOutlet weak var eventLabelThree: UILabel!
-    @IBOutlet weak var eventLabelFour: UILabel!
+    @IBOutlet weak var eventButtonOne: UIButton!
+    @IBOutlet weak var eventButtonTwo: UIButton!
+    @IBOutlet weak var eventButtonThree: UIButton!
+    @IBOutlet weak var eventButtonFour: UIButton!
+
     
     var updateLabelTimer: Timer!
-    var timeLimit = 60
     var timerLabel: UILabel!
     let game = Game()
     
@@ -35,10 +35,7 @@ class ViewController: UIViewController {
         
        //set screen for start of the round
         defaultRoundScreen()
-        
-       
 
-     
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,10 +58,10 @@ class ViewController: UIViewController {
     //updates the events text labels
     func refreshEventsOnScreen(){
         if let round = game.round {
-            eventLabelOne.text = round.events[0].description
-            eventLabelTwo.text = round.events[1].description
-            eventLabelThree.text = round.events[2].description
-            eventLabelFour.text = round.events[3].description
+            eventButtonOne.setTitle(round.events[0].description, for: .normal)
+            eventButtonTwo.setTitle(round.events[1].description, for: .normal)
+            eventButtonThree.setTitle(round.events[2].description, for: .normal)
+            eventButtonFour.setTitle(round.events[3].description, for: .normal)
         }
         
     }
@@ -76,9 +73,13 @@ class ViewController: UIViewController {
         nextRoundButton.isHidden = true
         notificationLabel.text = "Shake to complete"
         
+        //setup countdown timer
+        game.timeLimit = 10
+        updateLabelTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimerText), userInfo: nil, repeats: true)
+        
         //make a label to display the timer
         timerLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
-        timerLabel.text = "0:\(timeLimit)"
+        timerLabel.text = "0:\(game.timeLimit)"
         timerLabel.font = timerLabel.font.withSize(35)
         timerLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         timerLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -92,17 +93,22 @@ class ViewController: UIViewController {
         super.view.addConstraint(NSLayoutConstraint(item: timerLabel, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0))
         super.view.addConstraint(NSLayoutConstraint(item: timerLabel, attribute: .top, relatedBy: .equal, toItem: nextRoundButton, attribute: .top, multiplier: 1, constant: 0))
         
-        //setup countdown timer
-        timeLimit = 10
-        updateLabelTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimerText), userInfo: nil, repeats: true)
+        //update the event labels
         refreshEventsOnScreen()
     }
     
     //responsible for decreasing the time and updating the label
     @objc func updateTimerText(){
-        timeLimit -= 1
-        timerLabel.text = "0:\(timeLimit)"
-        if timeLimit == 0 {
+        game.timeLimit -= 1
+        if game.timeLimit >= 10 {
+            timerLabel.text = "0:\(game.timeLimit)"
+        }
+        else {
+            timerLabel.text = "0:0\(game.timeLimit)"
+        }
+        
+        //times up. show the next round button.
+        if game.timeLimit == 0 {
             timerLabel.isHidden = true
             nextRoundButton.isHidden = false
             notificationLabel.text = "Tap events to learn more"
@@ -110,7 +116,7 @@ class ViewController: UIViewController {
         }
     }
 
-
+    //enum for identify which event
     enum Button: Int {
         case One = 0
         case Two
@@ -149,6 +155,8 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    //next round button click
     @IBAction func nextRound() {
         game.newRound()
         defaultRoundScreen()
