@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     var updateLabelTimer: Timer!
     var timerLabel: UILabel!
     let game = Game()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,16 +33,21 @@ class ViewController: UIViewController {
         //let the games begin!
         game.newRound()
         
-       //set screen for start of the round
+        //set screen for start of the round
         defaultRoundScreen()
 
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    //don't allow to rotate the screen
+    override open var shouldAutorotate: Bool {
+        return false
+    }
     //become first responder for shake motion
     override var canBecomeFirstResponder: Bool {
         get {
@@ -65,7 +70,14 @@ class ViewController: UIViewController {
         }
         
     }
-    
+    func refreshNextRoundButton(correct: Bool){
+        if correct {
+            nextRoundButton.setImage(#imageLiteral(resourceName: "next_round_success"), for: .normal)
+        }
+        else{
+            nextRoundButton.setImage(#imageLiteral(resourceName: "next_round_fail"), for: .normal)
+        }
+    }
     //set up the display so the round can start
     func defaultRoundScreen(){
         
@@ -113,6 +125,7 @@ class ViewController: UIViewController {
             nextRoundButton.isHidden = false
             notificationLabel.text = "Tap events to learn more"
             updateLabelTimer.invalidate()
+            refreshNextRoundButton(correct: game.isOrderedCorrectly())
         }
     }
 
@@ -158,8 +171,13 @@ class ViewController: UIViewController {
     
     //next round button click
     @IBAction func nextRound() {
+        if !game.isGameOver() {
         game.newRound()
         defaultRoundScreen()
+        }
+        else {
+            //show score
+        }
     }
     
     

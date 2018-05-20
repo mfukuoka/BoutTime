@@ -13,7 +13,10 @@ class Game {
     var round: Round?
     var events: [Event]
     var timeLimit = 60
-    
+    var totalRounds = 0
+    var roundsInGame = 6
+    var correctAnswers = 0
+
     init() {
         self.events = getEventsFromDb()
         round = Round(events: getRandomEvents())
@@ -27,7 +30,38 @@ class Game {
         }
 
     }
+    //check if the events are ordered correctly
+    func isOrderedCorrectly() -> Bool{
+        totalRounds += 1
+        if let round = self.round  {
+            if round.events[0].year < round.events[1].year {
+                if round.events[1].year < round.events[2].year {
+                    if  round.events[2].year < round.events[3].year {
+                        correctAnswers += 1
+                        return true
+                    }
+                }
+            }
+        }
+       
+        return false
+    }
     
+    //set back to defaults for a new game
+    func newGame() {
+        totalRounds = 0
+        correctAnswers = 0
+    }
+    //returns true if number of rounds played equals rounds in a game
+    func isGameOver() -> Bool {
+        if totalRounds == roundsInGame {
+            return true
+        }
+        else{
+            return false
+        }
+        
+    }
     //returns a four element array of random events
     func getRandomEvents() -> [Event] {
         
