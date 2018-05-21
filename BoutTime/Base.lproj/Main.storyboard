@@ -32,6 +32,7 @@
                                                     <constraint firstAttribute="width" secondItem="SZd-pv-8in" secondAttribute="height" multiplier="269:100" id="Ved-si-QXp"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" red="0.0" green="0.16078431369999999" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -84,6 +85,7 @@
                                                     <constraint firstAttribute="width" secondItem="4Vc-NM-ZtJ" secondAttribute="height" multiplier="269:100" id="nfz-rY-L8P"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" red="0.0" green="0.16078431369999999" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -153,6 +155,7 @@
                                                     <constraint firstAttribute="width" secondItem="ObV-Ci-Foh" secondAttribute="height" multiplier="269:100" id="CbT-mx-wAD"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" red="0.0" green="0.16078431369999999" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -186,6 +189,7 @@
                                                     <constraint firstAttribute="width" secondItem="rsj-Oa-zbw" secondAttribute="height" multiplier="269:100" id="JLF-Tk-b80"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" red="0.0" green="0.16078431369999999" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -361,14 +365,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebx-4A-cmd">
-                                <rect key="frame" x="133.5" y="315.5" width="108" height="36"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.56078431370000004" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azT-5e-kiq">
+                                <rect key="frame" x="155" y="178.5" width="65" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14w-gB-JKb">
+                                <rect key="frame" x="150" y="159" width="75" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.19607843137254902" green="0.5607843137254902" blue="0.70588235294117652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebx-4A-cmd">
+                                <rect key="frame" x="112" y="308" width="150" height="50"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.56078431370000004" blue="0.70980392160000005" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="ebx-4A-cmd" secondAttribute="height" multiplier="24:8" id="9Zq-xi-1gh"/>
+                                    <constraint firstAttribute="width" secondItem="ebx-4A-cmd" secondAttribute="height" multiplier="2:1" constant="50" id="abn-St-Y3S"/>
+                                    <constraint firstAttribute="width" secondItem="ebx-4A-cmd" secondAttribute="height" multiplier="3:1" id="jLe-9L-vWm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Play Again">
+                                <state key="normal" title="Play Again" image="play_again">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -381,27 +397,15 @@
                                     <action selector="dismiss:" destination="reR-Lt-32k" eventType="touchUpInside" id="nIS-K8-I9b"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azT-5e-kiq">
-                                <rect key="frame" x="155" y="249.5" width="65" height="48"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14w-gB-JKb">
-                                <rect key="frame" x="150" y="230" width="75" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.19607843137254902" green="0.5607843137254902" blue="0.70588235294117652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.16078431369999999" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="14w-gB-JKb" firstAttribute="centerX" secondItem="5eW-RZ-TRd" secondAttribute="centerX" id="32b-1c-AH7"/>
                             <constraint firstItem="azT-5e-kiq" firstAttribute="top" secondItem="14w-gB-JKb" secondAttribute="bottom" constant="1.5" id="QTm-ey-XE0"/>
                             <constraint firstItem="azT-5e-kiq" firstAttribute="centerX" secondItem="5eW-RZ-TRd" secondAttribute="centerX" id="u0O-2h-hXa"/>
-                            <constraint firstItem="ebx-4A-cmd" firstAttribute="top" secondItem="azT-5e-kiq" secondAttribute="bottom" constant="18" id="wdP-UV-1nA"/>
-                            <constraint firstItem="ebx-4A-cmd" firstAttribute="centerX" secondItem="5eW-RZ-TRd" secondAttribute="centerX" id="xgU-L8-Lck"/>
-                            <constraint firstItem="ebx-4A-cmd" firstAttribute="centerY" secondItem="5eW-RZ-TRd" secondAttribute="centerY" id="zUq-dB-1Ca"/>
+                            <constraint firstItem="ebx-4A-cmd" firstAttribute="top" secondItem="azT-5e-kiq" secondAttribute="bottom" constant="81.5" id="wdP-UV-1nA"/>
+                            <constraint firstItem="ebx-4A-cmd" firstAttribute="centerX" secondItem="5eW-RZ-TRd" secondAttribute="centerX" constant="-0.5" id="xgU-L8-Lck"/>
+                            <constraint firstItem="ebx-4A-cmd" firstAttribute="centerY" secondItem="5eW-RZ-TRd" secondAttribute="centerY" constant="-0.5" id="zUq-dB-1Ca"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TLV-cj-uob"/>
                     </view>
@@ -420,6 +424,7 @@
         <image name="down_half" width="158" height="229"/>
         <image name="down_half_selected" width="158" height="229"/>
         <image name="next_round_success" width="558" height="142"/>
+        <image name="play_again" width="450" height="142"/>
         <image name="up_full" width="158" height="457"/>
         <image name="up_full_selected" width="158" height="457"/>
         <image name="up_half" width="158" height="229"/>
