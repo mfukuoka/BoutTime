@@ -15,6 +15,8 @@
 		A914CEDB20995BDA00EF8B29 /* IncorrectBuzz.wav in Resources */ = {isa = PBXBuildFile; fileRef = A914CED920995BDA00EF8B29 /* IncorrectBuzz.wav */; };
 		A914CEDC20995BDA00EF8B29 /* CorrectDing.wav in Resources */ = {isa = PBXBuildFile; fileRef = A914CEDA20995BDA00EF8B29 /* CorrectDing.wav */; };
 		A933360B20A2AACE00088107 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A933360A20A2AACE00088107 /* Game.swift */; };
+		A995676D20B148BD00D30815 /* PlayAgainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995676C20B148BD00D30815 /* PlayAgainViewController.swift */; };
+		A995676F20B148CF00D30815 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995676E20B148CF00D30815 /* WebViewController.swift */; };
 		A9DE7EB720A3C2D60047EA9C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DE7EB620A3C2D60047EA9C /* Event.swift */; };
 		A9DE7EB920A3C2EE0047EA9C /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DE7EB820A3C2EE0047EA9C /* Round.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +32,8 @@
 		A914CED920995BDA00EF8B29 /* IncorrectBuzz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IncorrectBuzz.wav; sourceTree = "<group>"; };
 		A914CEDA20995BDA00EF8B29 /* CorrectDing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CorrectDing.wav; sourceTree = "<group>"; };
 		A933360A20A2AACE00088107 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		A995676C20B148BD00D30815 /* PlayAgainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayAgainViewController.swift; sourceTree = "<group>"; };
+		A995676E20B148CF00D30815 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A9DE7EB620A3C2D60047EA9C /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		A9DE7EB820A3C2EE0047EA9C /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +77,8 @@
 				A914CECD209959A700EF8B29 /* LaunchScreen.storyboard */,
 				A914CED0209959A700EF8B29 /* Info.plist */,
 				A933360A20A2AACE00088107 /* Game.swift */,
+				A995676C20B148BD00D30815 /* PlayAgainViewController.swift */,
+				A995676E20B148CF00D30815 /* WebViewController.swift */,
 			);
 			path = BoutTime;
 			sourceTree = "<group>";
@@ -172,6 +178,8 @@
 				A9DE7EB720A3C2D60047EA9C /* Event.swift in Sources */,
 				A914CEC7209959A700EF8B29 /* ViewController.swift in Sources */,
 				A933360B20A2AACE00088107 /* Game.swift in Sources */,
+				A995676D20B148BD00D30815 /* PlayAgainViewController.swift in Sources */,
+				A995676F20B148CF00D30815 /* WebViewController.swift in Sources */,
 				A9DE7EB920A3C2EE0047EA9C /* Round.swift in Sources */,
 				A914CEC5209959A700EF8B29 /* AppDelegate.swift in Sources */,
 			);

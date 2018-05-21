@@ -9,9 +9,12 @@
 import Foundation
 import GameKit
 
+
+
 class Game {
     var round: Round?
     var events: [Event]
+    let timeAtLimit = 60
     var timeLimit = 60
     var totalRounds = 0
     var roundsInGame = 6
@@ -93,20 +96,49 @@ class Game {
         }
         return container
     }
+    
+    //sounds for the game
+    var correctSound: SystemSoundID = 0
+    var incorrectSound: SystemSoundID = 1
+    
+    //correct sound
+    func loadCorrectSound() {
+        
+        let pathToSoundFile = Bundle.main.path(forResource: "CorrectDing", ofType: "wav")
+        let soundURL = URL(fileURLWithPath: pathToSoundFile!)
+        AudioServicesCreateSystemSoundID(soundURL as CFURL, &correctSound)
+    }
+    func playCorrectSound() {
+        self.loadCorrectSound()
+        AudioServicesPlaySystemSound(correctSound)
+    }
+    
+    //sound for incorrect answer
+    func loadIncorrectSound() {
+        let pathToSoundFile = Bundle.main.path(forResource: "IncorrectBuzz", ofType: "wav")
+        let soundURL = URL(fileURLWithPath: pathToSoundFile!)
+        AudioServicesCreateSystemSoundID(soundURL as CFURL, &incorrectSound)
+    }
+
+    func playIncorrectSound() {
+        self.loadIncorrectSound()
+        AudioServicesPlaySystemSound(incorrectSound)
+    }
 }
+
 
 
 //establish a dataset
 func getEventsFromDb() -> [Event] {
     var events: [Event] = []
     
-    let e1 = Event(year: 1993, description: "The MP3 file format was published", url: " https://en.wikipedia.org/wiki/Timeline_of_computing_1990–99")
+    let e1 = Event(year: 1993, description: "The MP3 file format was published", url: "https://www.google.com/search?q=The+MP3+file+format+was+published")
     
-    let e2 = Event(year: 1994, description: "Linus Torvalds released version 1.0 of the Linux kernel", url: " https://en.wikipedia.org/wiki/Timeline_of_computing_1990–99")
+    let e2 = Event(year: 1994, description: "Linus Torvalds released version 1.0 of the Linux kernel", url: "https://www.google.com/search?q=Linus+Torvalds+released+version+1.0+linux+kernel")
     
-    let e3 = Event(year: 1996, description: "Intel released the 200 MHz version of the Pentium Processor", url: " https://en.wikipedia.org/wiki/Timeline_of_computing_1990–99")
+    let e3 = Event(year: 1996, description: "Intel released the 200 MHz version of the Pentium Processor", url: "https://en.wikipedia.org/wiki/Timeline_of_computing_1990–99")
     
-    let e4 = Event(year: 2015, description: "Windows 10 is released", url: " https://en.wikipedia.org/wiki/Timeline_of_computing_2010–19")
+    let e4 = Event(year: 2015, description: "Windows 10 is released", url: "https://www.google.com/search?q=Windows+10+is+released")
     
     let e5 = Event(year: 1975, description: "Bill Gates and Paul Allen founded Microsoft", url: "https://en.wikipedia.org/wiki/Timeline_of_Microsoft")
     
@@ -122,24 +154,29 @@ func getEventsFromDb() -> [Event] {
     
     let e11 = Event(year: 1995, description: "Windows 95 is released", url: "https://en.wikipedia.org/wiki/Timeline_of_Microsoft")
     
-    let e12 = Event(year: 2011, description: "The first 4 terbyte hard drive is released by Seagate", url: " https://en.wikipedia.org/wiki/Timeline_of_computing_2010–19")
+    let e12 = Event(year: 2011, description: "The first 4 terabyte hard drive is released by Seagate", url: "https://www.google.com/search?q=the+first+4+terabyte+hard+drive")
     
-    let e13 = Event(year: 1975, description: "Bill Gates hands over CEO to Steve Ballmer", url: " https://en.wikipedia.org/wiki/Timeline_of_Microsoft")
+    let e13 = Event(year: 1975, description: "Bill Gates hands over CEO to Steve Ballmer", url: "https://en.wikipedia.org/wiki/Timeline_of_Microsoft")
     
-    let e14 = Event(year: 2000, description: "AMD released an Athlon clocked at 1 GHz", url: " https://en.wikipedia.org/wiki/Timeline_of_computing_2000–09")
+    let e14 = Event(year: 2000, description: "AMD released an Athlon clocked at 1 GHz", url: "https://www.google.com/search?q=AMD+released+Athlon+clocked+at+1+GHz")
     
-    let e15 = Event(year: 2002, description: "BlackBerry smartphone first released", url: " https://en.wikipedia.org/wiki/Timeline_of_computing_2000–09")
+    let e15 = Event(year: 2002, description: "BlackBerry smartphone first released", url: "https://www.google.com/search?q=blackberry+smartphone+first+released")
     
-    let e16 = Event(year: 2003, description: "Nvidia released GeForce FX", url: "https://en.wikipedia.org/wiki/Timeline_of_computing_2000–09")
+    let e16 = Event(year: 2003, description: "Nvidia released GeForce FX", url: "https://www.google.com/search?q=Nvidia+released+Geforce+FX")
     
-    let e17 = Event(year: 2004, description: "Google announces Gmail", url: "https://en.wikipedia.org/wiki/Timeline_of_computing_2000–09")
+    let e17 = Event(year: 2004, description: "Google announces Gmail", url: "https://www.google.com/search?q=Google+announces+Gmail")
     
-    let e18 = Event(year: 2005, description: "Xbox 360 is released", url: " https://en.wikipedia.org/wiki/Timeline_of_computing_2000–09")
-    let e19 = Event(year: 1975, description: "Sony Playstation 3 is released", url: " https://en.wikipedia.org/wiki/Timeline_of_computing_2000–09")
+    let e18 = Event(year: 2005, description: "Xbox 360 is released", url: "https://www.google.com/search?q=xbox+360+is+released")
     
-    let e20 = Event(year: 2007, description: "The first iPhone was introduced by Apple", url: " https://en.wikipedia.org/wiki/Timeline_of_computing_2000–09")
+    let e19 = Event(year: 1975, description: "Sony Playstation 3 is released", url: "https://www.google.com/search?q=sony+playstation+3+is+released")
     
-    let e21 = Event(year: 2009, description: "The online currency Bitcoin is released", url: " https://en.wikipedia.org/wiki/Timeline_of_computing_2000–09")
+    let e20 = Event(year: 2007, description: "The first iPhone was introduced by Apple", url: "https://www.google.com/search?q=first+iphone+was+introduced+by+apple")
+    
+    let e21 = Event(year: 2009, description: "The online currency Bitcoin is released", url: "https://www.google.com/search?q=bitcoin+is+first+released")
+    let e22 = Event(year: 1984, description: "Hewlett Packard releases HP-UX", url: "https://www.google.com/search?q=hp+unix")
+    let e23 = Event(year: 1950, description: "Alan turing develops the Turing test", url: "https://www.google.com/search?q=turing+test")
+    let e24 = Event(year: 1962, description: "Nick Holonyak invents the LED", url: "https://www.google.com/search?q=holonyak+led")
+    let e25 = Event(year: 1891, description: "Nikola Tesla patented his Tesla coil", url: "https://www.google.com/search?q=tesla+coil")
     
     events.append(e1)
     events.append(e2)
@@ -162,7 +199,10 @@ func getEventsFromDb() -> [Event] {
     events.append(e19)
     events.append(e20)
     events.append(e21)
-    
+    events.append(e22)
+    events.append(e23)
+    events.append(e24)
+    events.append(e25)
     
     return events
 }

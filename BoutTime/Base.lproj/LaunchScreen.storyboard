@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BOUT TIME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Pyc-qU-Krf">
-                                <rect key="frame" x="51" y="301" width="273.5" height="61"/>
+                                <rect key="frame" x="51" y="361.33333333333331" width="312.66666666666669" height="69.666666666666686"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Pyc-qU-Krf" secondAttribute="height" multiplier="273:61" id="T66-Lg-ceY"/>
                                 </constraints>
@@ -29,18 +29,37 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="NBq-Sm-CxF">
-                                <rect key="frame" x="107" y="138" width="160" height="155"/>
+                                <rect key="frame" x="107" y="160.66666666666669" width="199" height="192.66666666666669"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="NBq-Sm-CxF" secondAttribute="height" multiplier="32:31" id="N51-fT-kER"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Computer History Edition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Exo-hZ-s4J">
+                                <rect key="frame" x="103.33333333333333" y="439" width="207.66666666666669" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w07-8T-3eG">
+                                <rect key="frame" x="20" y="491" width="374" height="61"/>
+                                <string key="text">Order events from the top of the screen (oldest) to the bottom of the screen (newest). Better act fast before the time runs out!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.16078431372549021" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NBq-Sm-CxF" secondAttribute="trailing" constant="108" id="8KA-VJ-PDm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Pyc-qU-Krf" secondAttribute="bottom" constant="305" id="8ca-4G-Y6Z"/>
+                            <constraint firstItem="Exo-hZ-s4J" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BXw-b1-9OT"/>
+                            <constraint firstAttribute="trailing" secondItem="w07-8T-3eG" secondAttribute="trailing" constant="20" id="Gtw-bz-NTA"/>
                             <constraint firstItem="NBq-Sm-CxF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="107" id="ORG-8v-SqJ"/>
+                            <constraint firstItem="w07-8T-3eG" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" id="W3p-xU-PH7"/>
+                            <constraint firstItem="w07-8T-3eG" firstAttribute="top" secondItem="Exo-hZ-s4J" secondAttribute="bottom" constant="31" id="XTC-5X-F4W"/>
                             <constraint firstItem="Pyc-qU-Krf" firstAttribute="top" secondItem="NBq-Sm-CxF" secondAttribute="bottom" constant="8" id="bO5-5t-BOJ"/>
+                            <constraint firstItem="Exo-hZ-s4J" firstAttribute="top" secondItem="Pyc-qU-Krf" secondAttribute="bottom" constant="8" id="hQw-8l-CAl"/>
+                            <constraint firstItem="w07-8T-3eG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="pno-ND-ZwU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pyc-qU-Krf" secondAttribute="trailing" constant="50.5" id="s3e-ig-w93"/>
                             <constraint firstItem="Pyc-qU-Krf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="51" id="vMZ-qu-PBW"/>
                         </constraints>
